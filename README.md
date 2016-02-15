@@ -36,7 +36,8 @@ go get
 go run ./*.go
 ```
 
-## Notes
+## Implementation Notes
+- The `POST /games/{id}` body must be formatted as an `application/json`
 - The game does not register a repeated letter as failed attempt. Example:
 if I've guessed so far "a..s.d...""
 when I try to put another "a" then it's not considered incorrect. The logic is that it could be an error of intentions from the user's part.
