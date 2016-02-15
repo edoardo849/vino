@@ -1,6 +1,8 @@
 # Vino: a Hangman-like game written in Go
 Vino is a Hangman game that runs on the server and communicates with the client with a RESTful API. The game is a quick showcase of a Go API and should **NOT** be used in any production environment.
 
+The words to guess are picked from a list of some of the best wines out there because... good wines are awesome!
+
 | Method  | URL  | Description  |
 |---|---|---|
 | POST  | /games  |Start a new game   |
