@@ -37,6 +37,7 @@ go run ./*.go
 ```
 
 ## Implementation Notes
+- The directory structure is flat because of its simple implementation. For a production-ready environment you should organize your code into packages and folders
 - The `POST /games/{id}` body must be formatted as an `application/json`
 - The game does not register a repeated letter as failed attempt. Example:
 if I've guessed so far "a..s.d...""
