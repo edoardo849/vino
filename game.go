@@ -77,6 +77,7 @@ func (g *Game) Begin() {
 
 }
 
+//GuessLetter is the actual Hangman game implementation
 func (g *Game) GuessLetter(l Letter) {
 
 	// Do not bother to execute code if the game is not busy
@@ -138,4 +139,5 @@ func hideWord(word string) string {
 	return w
 }
 
+//Games is a list of games
 type Games []Game

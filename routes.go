@@ -2,6 +2,7 @@ package main
 
 import "net/http"
 
+//Route is the model for the router setup
 type Route struct {
 	Name        string
 	Method      string
@@ -9,6 +10,7 @@ type Route struct {
 	HandlerFunc http.HandlerFunc
 }
 
+//Routes are the main setup for our Router
 type Routes []Route
 
 var routes = Routes{

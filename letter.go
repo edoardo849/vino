@@ -5,11 +5,15 @@ import (
 	"regexp"
 )
 
+//Letter is the model for the user-answer
 type Letter struct {
 	Char string `json:"char"`
 }
 
-func (l *Letter) isValid() error {
+//IsValid checks the validity of the specified letter,
+//in short it must be a single-digit a-z char, everything
+//else will throw a soft-error
+func (l *Letter) IsValid() error {
 
 	r, err := regexp.Compile(`^[a-z]$`)
 

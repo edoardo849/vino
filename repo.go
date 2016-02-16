@@ -12,6 +12,7 @@ func init() {
 	RepoCreateGame()
 }
 
+//RepoFindGame is the "R" in CRUD
 func RepoFindGame(id int) Game {
 	for _, g := range games {
 		if g.ID == id {
@@ -22,6 +23,8 @@ func RepoFindGame(id int) Game {
 	return Game{}
 }
 
+//RepoCreateGame is the "C" in CRUD: it stores the games
+//inside an in-memory struct.
 func RepoCreateGame() Game {
 	currentID++ //this is bad, I don't think it passes race condtions, but ok for example
 
@@ -31,6 +34,8 @@ func RepoCreateGame() Game {
 	return g
 }
 
+//RepoUpdateGame is the "U" in CRUD: it deletes the old
+//reference in the struct and replaces with a new one
 func RepoUpdateGame(g Game) error {
 	for i, gi := range games {
 		if gi.ID == g.ID {
@@ -48,6 +53,8 @@ func RepoUpdateGame(g Game) error {
 	return fmt.Errorf("Could not find Game with id of %d to delete", g.ID)
 }
 
+//RepoDestroyGame is the "D" in CRUD: currently not implemented
+//elsewhere
 func RepoDestroyGame(id int) error {
 	for i, g := range games {
 		if g.ID == id {
